@@ -7,5 +7,6 @@
         "sfs.h": "c",
         "ddriver.h": "c",
         "errno.h": "c"
-    }
+    },
+    "cmake.sourceDirectory": "/home/clouder/user-land-filesystem/fs/demo"
 }
