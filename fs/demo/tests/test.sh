@@ -1,6 +1,6 @@
 # config
 diskrandom="./disk2"
-diskereal="~/ddriver"
+diskereal="$HOME/ddriver"
 
 filename="$((RANDOM)).txt"
 BLOCKSIZE=1024
@@ -12,14 +12,14 @@ offset=$((BLOCKINDEX * BLOCKSIZE))
 
 # 写磁盘
 echo -n -e "$filename\0" | dd of="$diskrandom" bs=1 seek=$offset conv=notrunc >/dev/null 2>&1
-dd if="$diskrandom" of=~/ddriver bs=512 count=8192 >/dev/null 2>&1
+dd if="$diskrandom" of=$diskereal bs=512 count=8192 >/dev/null 2>&1
 
 # 编译src
 cd ..; mkdir build >/dev/null 2>&1; cd build
 
 cmake .. >/dev/null 2>&1; make >/dev/null 2>&1;
 if [ $? -eq 0 ]; then
-    echo "" >/dev/null
+    echo "1111" >/dev/null
 else
     echo "Test Fail : 编译失败"
     exit 1
