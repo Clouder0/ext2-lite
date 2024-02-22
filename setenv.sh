@@ -25,7 +25,7 @@ function install_driver() {
                 sudo apt-get install make cmake fuse libfuse-dev
             else 
                 echo "> yum install"
-                sudo yum install make cmake fuse fuse-devel 
+                # sudo yum install make cmake fuse fuse-devel 
             fi 
         else
             echo "警告：没有包被安装，如果是校内远程计算节点，请忽略"
